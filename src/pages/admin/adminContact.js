@@ -1,30 +1,31 @@
 import React from "react";
 import { Form, Input, Button, message } from "antd";
-import { useDispatch, useSelector } from "react-redux"
-import { HideLoading, ShowLoading } from "../../redux/rootSlice"
-import axios from 'axios';
+import { useDispatch, useSelector } from "react-redux";
+import { HideLoading, ShowLoading } from "../../redux/rootSlice";
+import axios from "axios";
+import { URL } from "../../App";
 
 function AdminContact() {
-    const dispatch = useDispatch();
-    const {portfolioData} = useSelector((state)=>state.root);
-    const onfinish = async (values)=>{
-        try {
-            dispatch(ShowLoading())
-            const response = await axios.post("/api/portfolio/update-contact", {
-                ...values,
-                _id: portfolioData.contacts._id
-            });
-            dispatch(HideLoading());
-            if (response.data.success) {
-                message.success(response.data.message);
-            }else{
-                message.error(response.data.message);
-            }
-        } catch (error) {
-            dispatch(HideLoading());
-            message.error(error.message);
-        }
+  const dispatch = useDispatch();
+  const { portfolioData } = useSelector((state) => state.root);
+  const onfinish = async (values) => {
+    try {
+      dispatch(ShowLoading());
+      const response = await axios.post(`${URL}/api/portfolio/update-contact`, {
+        ...values,
+        _id: portfolioData.contacts._id,
+      });
+      dispatch(HideLoading());
+      if (response.data.success) {
+        message.success(response.data.message);
+      } else {
+        message.error(response.data.message);
+      }
+    } catch (error) {
+      dispatch(HideLoading());
+      message.error(error.message);
     }
+  };
   return (
     <div>
       <Form

@@ -14,6 +14,8 @@ import {
   ReloadData,
 } from "./redux/rootSlice";
 
+export const URL = process.env.REACT_APP_SERVER_URL;
+
 function App() {
   const { loading, portfolioData, reloadData } = useSelector(
     (state) => state.root
@@ -22,7 +24,9 @@ function App() {
   const getPortfolioData = async () => {
     try {
       dispatch(ShowLoading());
-      const response = await axios.get("/api/portfolio/get-portfolio-data");
+      const response = await axios.get(
+        `${URL}/api/portfolio/get-portfolio-data`
+      );
       dispatch(SetPortfolioData(response.data));
       dispatch(ReloadData(false));
       dispatch(HideLoading());
