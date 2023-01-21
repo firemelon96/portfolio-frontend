@@ -32,7 +32,7 @@ function Experience() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-5 w-3/4 ">
+        <div className="flex flex-col gap-5 w-3/4 sm:w-full ">
           <h1 className="text-tertiary text-2xl">
             {experiences[selectedItemIndex].title}
           </h1>

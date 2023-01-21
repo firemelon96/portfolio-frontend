@@ -32,7 +32,7 @@ function Projects() {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-5 w-3/4 sm:flex-col">
+        <div className="flex items-center justify-center gap-5 w-3/4 sm:w-full sm:flex-col">
           <img
             src={projects[selectedItemIndex].image}
             alt=""
