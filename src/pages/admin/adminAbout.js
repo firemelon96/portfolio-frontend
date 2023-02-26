@@ -41,10 +41,10 @@ function AdminAbout() {
         <Form.Item name="image" label="Image link">
           <Input placeholder="Image link" />
         </Form.Item>
-        <Form.Item name="desciption1" label="Short Description">
+        <Form.Item name="description1" label="Short Description">
           <Input.TextArea placeholder="Enter short description" />
         </Form.Item>
-        <Form.Item name="desciption2" label="Full Description">
+        <Form.Item name="description2" label="Full Description">
           <Input.TextArea placeholder="Enter full description" />
         </Form.Item>
         <Form.Item name="skills" label="Skills">

@@ -7,24 +7,26 @@ import Experience from "./experiences";
 import Footer from "./footer";
 import Intro from "./intro";
 import LeftIcon from "./leftIcon";
-import Projects from "./projects";
+import ProjectCard from "./projectCard";
+// import Projects from "./projects";
 
 function Home() {
-  const {portfolioData} = useSelector(state => state.root);
+  const { portfolioData } = useSelector((state) => state.root);
   return (
-    <div >
+    <div>
       <Header />
-        {portfolioData && (
-          <div className="bg-primary px-40 sm:px-5">
+      {portfolioData && (
+        <div className="bg-primary px-40 sm:px-5">
           <Intro />
           <About />
+          <ProjectCard />
           <Experience />
-          <Projects/>
+          {/* <Projects /> */}
           <Contact />
-          <Footer/>
-          <LeftIcon/>
+          <Footer />
+          <LeftIcon />
         </div>
-        )}
+      )}
     </div>
   );
 }

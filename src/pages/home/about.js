@@ -5,13 +5,13 @@ import SectionTitle from "../../components/sectionTitle";
 function About() {
   const { portfolioData } = useSelector((state) => state.root);
   const { about } = portfolioData;
-  const { image, desciption1, desciption2, skills } = about;
+  const { image, description1, description2, skills } = about;
   return (
     <div>
       <SectionTitle title="About" />
 
-      <div className="flex w-full items-center sm:flex-col gap-10">
-        <div className="h-[70vh] w-1/2 sm:w-full">
+      <div className="flex w-full items-center sm:flex-col lg:flex-col lg:w-full gap-10">
+        <div className="h-[70vh] w-1/2 lg:w-full sm:w-full">
           <lottie-player
             src={image}
             background="transparent"
@@ -19,9 +19,9 @@ function About() {
             autoplay
           ></lottie-player>
         </div>
-        <div className="flex flex-col gap-5 w-1/2 sm:w-full">
-          <p className="text-fourth">{desciption1}</p>
-          <p className="text-fourth">{desciption2}</p>
+        <div className="flex flex-col gap-5 lg:w-full w-1/2 sm:w-full text-center">
+          <p className="text-fourth text-xl">{description1 || ""}</p>
+          <p className="text-fourth text-xl">{description2 || ""}</p>
         </div>
       </div>
 

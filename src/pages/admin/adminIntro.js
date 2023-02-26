@@ -45,7 +45,7 @@ function AdminIntro() {
         <Form.Item name="caption" label="Caption">
           <Input placeholder="Enter a Caption" />
         </Form.Item>
-        <Form.Item name="desciption" label="Description">
+        <Form.Item name="description" label="Description">
           <Input.TextArea placeholder="Enter Description" />
         </Form.Item>
         <Form.Item style={{ float: "right" }}>

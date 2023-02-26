@@ -22,7 +22,7 @@ function AdminExperiences() {
 
   const props = {
     name: "title",
-
+    action: "upload-file-be08b.appspot.com",
     onChange({ file, fileList, fileUrl }) {
       setFileUrl(fileUrl);
     },
