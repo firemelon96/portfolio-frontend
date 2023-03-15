@@ -6,6 +6,15 @@ function ProjectCard() {
   //   const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
   const { portfolioData } = useSelector((state) => state.root);
   const { projects } = portfolioData;
+
+  const shortDesc = (text, n) => {
+    if (text.length > n) {
+      const elipsis = text.substring(0, n).concat("...");
+      return elipsis;
+    }
+    return text;
+  };
+
   return (
     <div>
       <SectionTitle title="Projects " />
@@ -27,7 +36,9 @@ function ProjectCard() {
               <div class="font-bold text-2xl mb-2 text-tertiary ">
                 {project.title}
               </div>
-              <p class="text-base text-fourth ">{project.description}</p>
+              <p class="text-base text-fourth ">
+                {shortDesc(project.description, 100)}
+              </p>
             </div>
             <div class="px-6 pt-4 pb-2">
               {project.technologies.map((item, index) => (
